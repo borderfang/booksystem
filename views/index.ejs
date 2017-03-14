@@ -1,0 +1,29 @@
+<style>
+	td { padding: 20px; text-align: center; }
+	.lg-p { font-weight: 800; }
+</style>
+<div>
+	<a href="/addbooks">添加图书</a>
+</div>
+<div style="display: block; margin-left: 50px;">
+	<table>
+		<tr>
+			<td class="lg-p">ID</td>
+			<td class="lg-p">书名</td>
+			<td class="lg-p">作者</td>
+			<td class="lg-p">价格</td>
+			<td class="lg-p">所属分类</td>
+			<td class="lg-p">校对</td>
+		</tr>
+		<% for(var i = 0; i < bookcount.length; i ++){ %>
+		<tr>
+			<td><%=bookcount[i].sid %></td>		
+			<td><%=bookcount[i].bookname %></td>
+			<td><%=bookcount[i].author %></td>
+			<td><%=bookcount[i].price %></td>
+			<td><% if (bookcount[i].category){ %><%=bookcount[i].category %> <%}else{%> 未添加分类 <%}%> </td>
+			<td><a href="/updatebooks?sid=<%=bookcount[i].sid %>">修改</a> <a href="/delbooks/<%=bookcount[i].sid %>">删除</a></td>
+		</tr>
+		<% } %>
+	</table>
+</div>

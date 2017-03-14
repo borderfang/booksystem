@@ -1,0 +1,32 @@
+<style>
+	.book-block { margin: 15px 10px; }
+	.book-block input{ padding: 5px 3px; }
+
+</style>
+<form action="/doupdatebooks/<%=sid %>" method="GET">
+	<div class="book-block">
+		<lable for="bookname" style="margin-left: 14px;"> I D </label>
+		<input type="text" name="sid" id="idcode" placeholder="请输入ID号码" value="<%=sid %>" disabled />
+	</div>
+	<div class="book-block">
+		<lable for="bookname">书名</label>
+		<input type="text" name="bookname" id="bookname" placeholder="请输入书名" value="<%=bookname %>" />
+	</div>
+	<div class="book-block">
+		<lable for="bookname">作者</label>
+		<input type="text" name="author" id="bookname" placeholder="请输入作者" value="<%=author %>" />
+	</div>
+	<div class="book-block">
+		<lable for="bookname">价格</label>
+		<input type="text" name="price" id="bookname" placeholder="请输入价格" value="<%=price %>" />
+	</div>
+	<div class="book-block">
+		<span>所属分类：</span>
+		<input type="radio" name="category" value="管理类">管理类
+		<input type="radio" name="category" value="经济类">经济类	
+		<input type="radio" name="category" value="法律类">法律类	
+		<input type="radio" name="category" value="哲学类">哲学类
+		<input type="radio" name="category" value="文学类">文学类	
+	</div>
+	<button type="submit">上传</button>
+</form>
